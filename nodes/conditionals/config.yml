@@ -1,0 +1,38 @@
+---
+name: resultContains
+category: conditional
+integration: base
+label: Result Contains
+description: Continue to next task if result from previous stage contains string
+task: 'nodes.conditionals.result_contains'
+icon: spellcheck
+inputs: 1
+outputs: 2
+arguments:
+  dataPath:
+    label: 'Data Path'
+    description: Path to field which is used to compare dataPath
+    form: input
+    required: true
+  dataValue:
+    label: 'Value'
+    description: 'Compare with partial string match'
+    form: input
+    required: true
+
+---
+name: fromDate
+category: conditional
+label: 'From date'
+integration: base
+description: Continue to next task after specified datetime
+task: 'nodes.conditionals.after_date'
+icon: event
+inputs: 1
+outputs: 1
+arguments:
+  datetime:
+    label: 'Date/Time'
+    form: datetime
+    description: Date/time to start task
+    required: true

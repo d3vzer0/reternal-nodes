@@ -1,0 +1,44 @@
+name: empire2RunModule
+category: c2
+integration: empire2
+label: 'Empire2: Run module'
+description: Empire is a post-exploitation framework that includes a pure-PowerShell2.0 Windows agent, and a pure Python 2.6/2.7 Linux/OS X agent. It is the merge of the previous PowerShell Empire and Python EmPyre projects. The framework offers cryptologically-secure communications and a flexible architecture. On the PowerShell side, Empire implements the ability to run PowerShell agents without needing powershell.exe, rapidly deployable post-exploitation modules ranging from key loggers to Mimikatz, and adaptable communications to evade network detection, all wrapped up in a usability-focused framework.
+thumbnail: '/statics/empire_small.png'
+inputs: 1
+outputs: 1
+task: 'c2.modules.empire2.run'
+arguments:
+  module:
+    label: Module
+    description: Execute Empire2 module
+    form: modules
+    required: true
+  input:
+    label: Input
+    description: Input variable for module
+    form: input
+    required: false
+  agents:
+    label: Agents
+    description: Selection of agents to execute module on
+    form: agents
+    multi: true
+    required: true
+
+---
+name: empire2StopAgent
+category: c2
+integration: empire2
+label: 'Empire2: Stop agent'
+description: Stop Empire 2 agent
+task: 'c2.agents.empire2.stop'
+thumbnail: '/statics/empire_small.png'
+inputs: 1
+outputs: 1
+arguments:
+  agents:
+    label: Stop agent
+    description: Stop specified agent(s)
+    form: agents
+    multi: true
+    required: true
