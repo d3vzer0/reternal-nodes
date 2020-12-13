@@ -1,0 +1,21 @@
+name: runTechnique
+category: c2global
+integration: global
+label: 'Global: Run Technique'
+description: Run pre-configured technique on listed agents
+icon: 'mdi-bullseye'
+inputs: 1
+outputs: 1
+task: 'c2.techniques.generic.run'
+arguments:
+  technique:
+    label: Technique
+    description: Execute ATTCK Technique
+    form: techniques
+    required: true
+  agents:
+    label: Agents
+    description: Selection of agents to execute module on
+    form: agents
+    multi: true
+    required: true
